@@ -7,7 +7,7 @@
 class Fixed
 {
 	private:
-		int floatpoint;
+		int fp;
 		static const int bitsleft = 8;
 	public:
 		Fixed(void);
@@ -18,7 +18,7 @@ class Fixed
 			std::cout << "Copy assignement operator called" << std::endl;
 			if (this != &f)
 			{
-				floatpoint = f.floatpoint;
+				fp = f.fp;
 			}
 			return (*this);
 		}

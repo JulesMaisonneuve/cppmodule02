@@ -3,14 +3,14 @@
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->floatpoint = 0;
+	this->fp = 0;
 	return ;
 }
 
 Fixed::Fixed(const int nb)
 {
 	std::cout << "Int constructor called" << std::endl;
-	floatpoint = nb << bitsleft;
+	fp = nb << bitsleft;
 }
 
 Fixed::Fixed(const float f)
@@ -26,22 +26,22 @@ Fixed::Fixed(const Fixed &f)
 }
 int Fixed::getRawBits(void) const
 {
-	return (this->floatpoint);
+	return (this->fp);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	this->floatpoint = raw;
+	this->fp = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-	return (floatpoint / (float)(1 << bitsleft));
+	return (fp / (float)(1 << bitsleft));
 }
 
 int Fixed::toInt(void) const
 {
-	return (floatpoint >> bitsleft);
+	return (fp >> bitsleft);
 }
 
 std::ostream &operator<<(std::ostream &output, const Fixed &f)
