@@ -13,16 +13,7 @@ class Fixed
 		Fixed(void);
 		Fixed(const int nb);
 		Fixed(const float f);
-		Fixed &operator=(const Fixed &f)
-		{
-			// std::cout << "Copy assignement operator called" << std::endl;
-			if (this != &f)
-			{
-				fp = f.fp;
-			}
-			return (*this);
-		}
-		// Fixed &operator+=(const Fixed &f);
+		Fixed &operator=(const Fixed &f);
 		bool operator ==(const Fixed &f) const;
 		bool operator !=(const Fixed &f) const;
 		bool operator <(const Fixed &f) const;

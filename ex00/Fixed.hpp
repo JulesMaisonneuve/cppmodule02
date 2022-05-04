@@ -11,15 +11,7 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(const Fixed &f);
-		Fixed &operator=(const Fixed &f)
-		{
-			std::cout << "Copy assignement operator called" << std::endl;
-			if (this != &f)
-			{
-				floatpoint = f.getRawBits();
-			}
-			return (*this);
-		}
+		Fixed &operator=(const Fixed &f);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		~Fixed(void);

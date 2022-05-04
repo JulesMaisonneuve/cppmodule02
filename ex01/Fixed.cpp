@@ -24,6 +24,17 @@ Fixed::Fixed(const Fixed &f)
 	std::cout << "Copy constructor called" << std::endl;
 	*this = f;
 }
+
+Fixed& Fixed::operator=(const Fixed &f)
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	if (this != &f)
+	{
+		fp = f.fp;
+	}
+	return (*this);
+}
+
 int Fixed::getRawBits(void) const
 {
 	return (this->fp);
